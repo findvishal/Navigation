@@ -10,6 +10,7 @@ import androidx.navigation.Navigation
 import com.example.navigationcomponent.R
 
 class FragmentB : Fragment() {
+    //new
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
