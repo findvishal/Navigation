@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.navigationcomponent.R
 
 class FragmentA : Fragment() {
@@ -14,14 +16,11 @@ class FragmentA : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view=inflater.inflate(R.layout.fragment_a, container, false)
-        val navController=activity?.let {
-            Navigation.findNavController(it,R.id.fragment)
-        }
         val buttonA:Button=view.findViewById(R.id.buttonA)
         buttonA.setOnClickListener{
-            navController?.navigate(R.id.action_fragmentA_to_fragmentB)
+            val direction=FragmentADirections.actionFragmentAToFragmentB("users")
+            findNavController().navigate(direction)
         }
         return view
     }

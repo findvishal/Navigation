@@ -12,7 +12,12 @@
         tools:layout="@layout/fragment_a" >
         <action
             android:id="@+id/action_fragmentA_to_fragmentB"
-            app:destination="@id/fragmentB" />
+            app:destination="@id/fragmentB">
+            <argument
+                android:name="searchQuery"
+                app:argType="string" />
+
+        </action>
     </fragment>
     <fragment
         android:id="@+id/fragmentB"
@@ -21,6 +26,11 @@
         tools:layout="@layout/fragment_b" >
         <action
             android:id="@+id/action_fragmentB_to_fragmentA"
-            app:destination="@id/fragmentA" />
+            app:destination="@id/fragmentA" >
+            <argument
+                android:name="searchQuery"
+                app:argType="string" />
+
+        </action>
     </fragment>
 </navigation>
